@@ -1,0 +1,8 @@
+cluster_name     = "your_cluster_name"
+cluster_region   = "us-central1-c"
+cluster_zones    =  ["us-central1-c"]
+castai_api_token = "your_cast_ai_api_key"
+project_id       = "your_gcp_project"
+subnets          = ["your_subnet for example : projects/demos-321800/regions/us-central1/subnetworks/my-subnet-3"]
+
+selected_template_names = ["spot_tmpl", "priority_tmpl"]

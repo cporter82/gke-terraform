@@ -22,7 +22,7 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
-.teraform.lock.hcl
+.terraform.lock.hcl
 
 # Ignore backup files generated during terraform state operations
 *.backup
@@ -41,3 +41,6 @@ terraform.rc
 # Ignore specific backup files in your directory
 node_templates.tf_backup
 castai.tf.backup
+
+# ignore sensitive variables
+tf.vars
