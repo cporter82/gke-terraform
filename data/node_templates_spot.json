@@ -1,0 +1,41 @@
+{
+    "spot_tmpl": {
+      "name": "spot_tmpl",
+      "configuration_id_name": "test_node_config",
+      "configuration_id": "dynamically_assigned",
+      "cluster_id": "dynamically_assigned",
+      "is_default": false,
+      "is_enabled": true,
+      "should_taint": true,
+      "custom_labels": {
+        "custom-label-key-1": "custom-label-value-1"
+      },
+      "custom_taints": [
+        {
+          "key": "custom-taint-key-1",
+          "value": "custom-taint-value-1",
+          "effect": "NoSchedule"
+        }
+      ],
+      "constraints": {
+        "on_demand": false,
+        "spot": true,
+        "use_spot_fallbacks": true,
+        "fallback_restore_rate_seconds": 1800,
+        "min_cpu": 4,
+        "max_cpu": null,
+        "min_memory": 4096,
+        "max_memory": null,
+        "instance_families": {
+          "exclude": ["e2"],
+          "include": []
+        },
+        "compute_optimized": false,
+        "storage_optimized": false,
+        "enable_spot_diversity": false,
+        "spot_diversity_price_increase_limit_percent": 20
+      },
+      "custom_instances_enabled": true
+    }
+  }
+  
