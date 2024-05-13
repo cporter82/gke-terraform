@@ -37,5 +37,24 @@ resource "castai_node_template" "template" {
         include = instance_families.value.include != null ? instance_families.value.include : []
       }
     }
+    dynamic "dedicated_node_affinity" {
+    for_each = each.value.constraints.dedicated_node_affinity
+
+    content {
+      az_name        = dedicated_node_affinity.value.az_name
+      instance_types = dedicated_node_affinity.value.instance_types
+      name           = dedicated_node_affinity.value.name
+
+      dynamic "affinity" {
+        for_each = dedicated_node_affinity.value.affinity
+
+        content {
+          key      = affinity.value.key
+          operator = affinity.value.operator
+          values   = affinity.value.values
+        } #content for affinity
+      } #affinity
+    } #content for dedicated_node_affinity 
+  } #dedicated_node_affinity
   } #constraints
 }

@@ -1,0 +1,59 @@
+{
+    "dedicated_tmpl": {
+      "name": "dedicated_tmpl",
+      "configuration_id_name": "default",
+      "configuration_id": "dynamically_assigned",
+      "cluster_id": "dynamically_assigned",
+      "is_default": false,
+      "is_enabled": true,
+      "should_taint": true,
+      "custom_instances_enabled": true,
+      "custom_labels": null,
+      "custom_taints": [],
+      "constraints": {
+        "on_demand": true,
+        "spot": false,
+        "use_spot_fallbacks": true,
+        "fallback_restore_rate_seconds": 1800,
+        "min_cpu": 4,
+        "max_cpu": null,
+        "min_memory": 4096,
+        "max_memory": null,
+        "instance_families": {
+          "exclude": [],
+          "include": ["n2d","t2d", "c2d"]
+        },
+        "compute_optimized": false,
+        "storage_optimized": false,
+        "enable_spot_diversity": false,
+        "spot_diversity_price_increase_limit_percent": 20,
+        "dedicated_node_affinity": [
+            {
+              "name": "/projects/gc-dv-gbl-sole-tenant/zones/us-east1-b/nodeGroups/gc-dv-ue1-sole-group",
+              "instance_types": [
+                "n2d-node-224-896"
+              ],
+              "az_name": "us-east1-b",
+              "affinity": [
+                {
+                  "key": "compute.googleapis.com/project",
+                  "values": [
+                    "gc-dv-gbl-sole-tenant"
+                  ],
+                  "operator": "In"
+                },
+                {
+                  "key": "compute.googleapis.com/node-group-name",
+                  "values": [
+                    "gc-dv-ue1-sole-group"
+                  ],
+                  "operator": "In"
+                }
+              ] 
+            }
+          ]
+        }
+      }
+    }
+
+  

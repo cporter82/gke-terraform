@@ -32,10 +32,20 @@ variable "templates" {
       })
       compute_optimized : bool
       storage_optimized : bool
-    })
-  }))
+    dedicated_node_affinity : list(object({
+        az_name        : string
+        instance_types : list(string)
+        name           : string
+        affinity       : list(object({
+          key      : string
+          operator : string
+          values   : list(string)
+        }))
+      }))
+    }) # constraints
+  })) 
   default = {}
-}
+} 
 
 variable "node_configurations" {
   type = any
