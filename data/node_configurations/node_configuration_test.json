@@ -1,0 +1,16 @@
+{
+    "name": "test",
+    "default": false,
+    "disk_cpu_ratio": 10,
+    "subnets": [""],
+    "tags": {
+        "node_config": "test"
+    },
+    "gke": {
+        "maxPodsPerNode": 110,
+        "networkTags": [],
+        "zones": []
+    },
+    "minDiskSize": 100,
+    "drainTimeoutSec": 0    
+}

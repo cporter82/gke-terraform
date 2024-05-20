@@ -1,0 +1,24 @@
+{
+    
+    "name": "default",
+    "default": true,
+    "diskCpuRatio": 0,
+    "subnets": [
+      "subnet-1"
+    ],
+    "tags": {},
+    "gke": {
+      "maxPodsPerNode": 110,
+      "networkTags": [],
+      "zones": []
+    },
+    "subnetDetails": [
+      {
+        "id": "",
+        "cidr": "",
+        "tags": {}
+      }
+    ],
+    "minDiskSize": 100,
+    "drainTimeoutSec": 0
+  }

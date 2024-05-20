@@ -1,3 +1,9 @@
+variable "selected_node_configuration_names" {
+  description = "List of names of the node configurations to select"
+  type        = list(string)
+  default     = []
+}
+
 variable "selected_template_names" {
   description = "List of node template names to include."
   type        = list(string)
